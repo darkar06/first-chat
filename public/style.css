@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100vw;
+}
+
+:root{
+    --fondo: rgb(12, 12, 93);
+}
+
+.chat{
+    min-height: 100vh;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.viewport{
+    flex-grow: 1;
+    background-color: var(--fondo);
+}
+
+.inputs{
+    height: 40px;
+}
