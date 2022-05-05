@@ -25,16 +25,21 @@
         box-sizing: border-box;
     }
 
-    body{
-        width: 100vw;
-        overflow: hidden;
-    }
-
     :root{
         --fondo: #17224D;
         --fondo2: #0a0e21;
         --message:  #fff;
         --blanco: #007fff;
+    }
+
+    
+
+    body{
+        width: 100vw;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .chat{
@@ -46,7 +51,7 @@
     }
 
     .viewport{
-        height: 100%;
+        height: 500px;
         flex-grow: 1;
         background-color: var(--fondo);
         overflow: hidden;
