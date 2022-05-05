@@ -129,11 +129,12 @@
         const button = document.querySelector(".button")
 
         button.addEventListener("click",()=>{
-            content.value = ""
             socket.emit("New:message",{
                 userName: userName.value,
                 content: content.value
             })
+            
+            content.value = ""
         })
 
         socket.on("New:message",({userName,content})=>{
