@@ -1,0 +1,242 @@
+*{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    :root{
+        --fondo: #17224D;
+        --fondo2: #0a0e21;
+        --message:  #fff;
+        --blanco: #007fff;
+    }
+
+    
+
+    body{
+        height: 100vh;
+        width: 100vw;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .chat{
+        position: relative;
+       height: 100vh;
+       width: 100%;
+
+        display: flex;
+        flex-direction: column;
+    }
+
+    .viewport{
+        position: relative;
+        z-index: 100;
+        height: 500px;
+        flex-grow: 1;
+        background-color: var(--fondo);
+        overflow: hidden;
+        overflow-y: auto;
+    }
+
+    .inputs{
+        background-color: var(--fondo2);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 8px;
+        min-width: 280px
+    }
+
+    .actions{
+        width: 100vw;
+        text-align: center;
+        margin-bottom: 8px;
+    }
+
+    .inputs input
+    {
+        background-color: var(--fondo);
+        border: none;
+        outline: none;
+        margin-right: 16px;
+        height: 40px;
+        border-radius: 20px;
+        max-width: 400px;
+        min-width: 100px;
+        padding: 8px 16px;
+        color: var(--message);
+        font-family: monospace;
+        flex-grow: 1;
+    }
+    
+    .inputs button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        background-color: var(--fondo);
+        border: none;
+        outline: none;
+        border-radius: 20px;
+        padding: 3px;
+        color: var(--message);
+        font-family: monospace;
+    }
+
+    .message{
+        width: fit-content;
+        max-width: 90vw;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        padding: 10px;
+        margin: 10px;
+        border-radius: 0px 7px 7px 7px;
+
+        color: var(--blanco);
+        background-color: var(--message);
+
+        font-family: monospace;
+        box-sizing: border-box;
+    }
+
+    .message p{
+        width: 100%;
+        word-wrap: break-word;
+        font-size: 1.3em;
+    }
+
+    .message h3{
+        margin-bottom: 5px ;
+        font-size: 1.5em;
+    }
+
+
+    /* --- modal --- */
+
+    .modal__background{
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        background: rgba(0,0,0,.4);
+        z-index: 10000
+    }
+
+    .modal{
+        background: var(--fondo);
+        height: 220px;
+        width: 250px;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 10px 10px 0px 0px var(--fondo2);
+        font-family: monospace;
+        color: var(--message);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+    }
+
+    .add__name input{
+        background: var(--fondo2);
+        padding: 8px 16px;
+        border: none;
+        outline: none;
+        border-radius: 3px;
+        color: var(--message)
+    }
+
+
+    .add__name input::placeholder{
+        color: rgba(256,256,256,.4);
+        font-family: monospace;
+    }
+
+    .add__name input:focus::placeholder{
+        color: rgba(256,256,256);
+    }
+
+    .add__name button{
+        background: var(--fondo);
+        margin-top: 8px;
+        padding: 8px 24px;
+        border: 3px solid var(--fondo2);
+        border-radius: 3px;
+        color: var(--fondo2);
+        font-family: monospace;
+        transition: background .2s;
+    }
+
+   .add__name button:hover{
+    background: var(--message)
+   }
+
+   /* --- funcionalidades  --- */
+
+   span{
+    color: white;
+    font-family: monospace;
+   }
+
+   .send{
+    height: 24px;
+    width: 24px;
+   }
+
+    .message__server{
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        padding: 10px;
+
+        color: var(--blanco);
+        background-color: var(--message);
+
+        font-family: monospace;
+        box-sizing: border-box;
+    }
+
+    .message__server h3{
+        font-size: 3em;
+
+        background-image: linear-gradient(to left,var(--fondo),var(--blanco),var(--fondo2));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+        display: block;
+
+        animation-name: effects;
+        animation-duration: 40s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
+
+    @keyframes effects {
+        0%{
+            background-position: 0px;
+        }
+
+        50%{
+            background-position: -1000px;
+        }
+
+        100%{
+            background-position: 0px;
+        }
+    }

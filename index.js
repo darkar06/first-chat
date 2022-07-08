@@ -14,9 +14,7 @@ app.use((req,res,next)=>{
 })
 
 
-app.use((req,res)=>{
-    res.sendFile(path.join(__dirname, "public/index.html"))
-})
+app.use("/",express.static("public"))
 
 const port = process.env.PORT || 3000
 
@@ -33,5 +31,15 @@ io.on("connection",(socket)=>{
 
     socket.on("New:message", (data) =>{
         io.sockets.emit("New:message", data)
+    })
+
+    socket.on("user:connected", (data) =>{
+        console.log(data)
+        socket.broadcast.emit("user:connected", data)
+    })
+
+    socket.on("chat:typing", (data) =>{
+        console.log(data)
+        socket.broadcast.emit("chat:typing", data)
     })
 })
