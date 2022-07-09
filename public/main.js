@@ -32,7 +32,7 @@
             content.value = ""
         })
 
-        content.addEventListener("change", e=> {
+        content.addEventListener("keypress", e=> {
 
             socket.emit("chat:typing", name)
         })
