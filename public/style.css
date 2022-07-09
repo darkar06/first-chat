@@ -14,7 +14,7 @@
     
 
     body{
-        height: -webkit-fill-available;
+        max-height: -webkit-fill-available;
         width: 100vw;
         overflow: hidden;
         display: flex;
@@ -24,7 +24,7 @@
 
     .chat{
         position: relative;
-       height: 100vh;
+       height: 100%;
        width: 100%;
 
         display: flex;
@@ -124,7 +124,7 @@
         position: fixed;
         top: 0;
         left: 0;
-        height: 100vh;
+        height: 100%;
         width: 100vw;
 
         display: flex;
